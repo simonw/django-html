@@ -7,7 +7,7 @@ setup(
     long_description=open('README.rst').read(),
     author='Simon Willison',
     author_email='simon@simonwillison.net',
-    url='http://code.google.com/p/django-html/',
+    url='http://github.com/simonw/django-html',
     license='BSD',
     packages=find_packages(exclude=['ez_setup']),
     include_package_data=True,
