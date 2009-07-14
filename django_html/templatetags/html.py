@@ -92,7 +92,6 @@ class FieldNode(template.Node):
         # Finally, if we're NOT in xhtml mode ensure no '/>'
         doctype = getattr(context, '_doctype', 'xhtml1')
         if doctype in html_doctypes:
-            print "html: '%s'" % html
             html = xhtml_end_re.sub('>', html)
         return html
 
