@@ -111,9 +111,6 @@ def do_field(parser, token):
 register.tag('field', do_field)
 
 class SlashNode(template.Node):
-    def __init__(self):
-        pass
-    
     def render(self, context):
         doctype = getattr(context, '_doctype', 'xhtml1')
         if doctype in html_doctypes:
