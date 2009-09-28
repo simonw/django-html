@@ -110,6 +110,26 @@ def do_field(parser, token):
 
 register.tag('field', do_field)
 
+class SlashNode(template.Node):
+    def __init__(self):
+        pass
+    
+    def render(self, context):
+        doctype = getattr(context, '_doctype', 'xhtml1')
+        if doctype in html_doctypes:
+            return ''
+        else:
+            return ' /'
+
+def do_slash(parser, token):
+    bits = token.contents.split()
+    if len(bits) != 1:
+        raise template.TemplateSyntaxError, \
+            "%r tag takes no arguments" % bits[0]
+    return SlashNode()
+
+register.tag('slash', do_slash)
+
 extra_attrs_re = re.compile(r'''([a-zA-Z][0-9a-zA-Z_-]*)="(.*?)"\s*''')
 
 def parse_extra_attrs(contents):

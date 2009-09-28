@@ -131,3 +131,16 @@ class FieldTest(TemplateTestHelper):
             {'form': MyForm()},
             {'name': 'select', 'class': 'foo', 'id': 'hi'}
         )
+
+class SlashTest(TemplateTestHelper):
+    def test_xhtml1(self):
+        self.assertRenders(
+            '{%load html%}{% doctype "xhtml1" silent %}<br{% slash %}>',
+            '<br />', {}
+        )
+    
+    def test_html4(self):
+        self.assertRenders(
+            '{%load html%}{% doctype "html4" silent %}<br{% slash %}>',
+            '<br>', {}
+        )
