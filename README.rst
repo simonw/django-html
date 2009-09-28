@@ -70,9 +70,9 @@ If your doctype is XHTML, you will get::
 {% slash %}
 ===========
 
-This tag is included for completeness. It was pointed out that authors of  
-reusable apps which ship with templates might want to ensure that their apps 
-use the correct markup for the current doctype. In practise, this means 
+This tag is included for completeness. Authors of reusable apps which ship 
+with their own templates (extending base.html) might want to ensure that their 
+apps use the correct markup for the current doctype. In practise, this means 
 outputting a self-closing tag for a small number of HTML elements. The 
 `{% slash %}` tag simply outputs the string "/ " for an XHTML doctype and 
 renders blank for an HTML doctype. Here are some examples::
