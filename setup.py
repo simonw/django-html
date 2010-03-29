@@ -1,15 +1,16 @@
-from setuptools import setup, find_packages
-
+from distutils.core import setup
+import os
+ 
 setup(
-    name='django-html',
+    name = 'django-html',
+    packages = ['django_html', 'django_html.templatetags'],
     version=__import__('django_html').__version__,
-    description='This package represents an experimental approach to improving the way Django outputs form widgets.',
+    description='Template tags for smarter outputting of HTML in Django',
     long_description=open('README.rst').read(),
     author='Simon Willison',
     author_email='simon@simonwillison.net',
     url='http://github.com/simonw/django-html',
     license='BSD',
-    packages=find_packages(exclude=['ez_setup']),
     include_package_data=True,
     zip_safe=False,
     classifiers=[
